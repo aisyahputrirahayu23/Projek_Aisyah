@@ -29,35 +29,39 @@
 
     <!-- Konten scrollable -->
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
         android:padding="24dp"
-        android:clipToPadding="false">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:padding="24dp">
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="260dp"
-                android:layout_height="181dp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="32dp"
+                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textJudul"
-                app:srcCompat="@drawable/airputih" />
+                app:srcCompat="@drawable/botol_obat" />
 
             <TextView
                 android:id="@+id/textJudul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/prata_regular"
-                android:text="Pentingnya Menjaga Kesehatan Tubuh"
+                android:text="Pentingnya Minum Obat Tepat Waktu"
                 android:textColor="#595757"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -68,78 +72,102 @@
 
             <TextView
                 android:id="@+id/textDeskripsi"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:lineSpacingExtra="5dp"
-                android:text="Kesehatan adalah aset paling berharga yang dimiliki setiap individu. Menjaga pola makan sehat, rutin berolahraga, cukup istirahat, serta melakukan pemeriksaan medis secara berkala dapat membantu mencegah berbagai penyakit. Dengan gaya hidup sehat, tubuh menjadi lebih bugar dan produktif dalam menjalani aktivitas sehari-hari. Jangan lupa untuk selalu berkonsultasi dengan tenaga medis profesional jika mengalami keluhan kesehatan."
+                android:text="Mengapa Pengingat Obat Penting?"
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/textJudul" />
 
-<!--            &lt;!&ndash; Tambahkan konten panjang supaya bisa di-scroll &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_marginTop="24dp" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="#0E7C86">
+
+                <TextView
+                    android:id="@+id/textKeterangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Menjaga kesehatan tidak hanya tentang menjalani pola hidup sehat, tetapi juga memastikan obat dikonsumsi secara teratur sesuai anjuran dokter. Namun, kesibukan sehari-hari terkadang membuat kita lupa waktu minum obat.\n\nMediRemind hadir sebagai solusi untuk membantu kamu mengatur jadwal minum obat dan memberikan pengingat agar tidak mudah terlewat. Dengan jadwal yang lebih teratur, kamu dapat menjalani pengobatan dengan lebih disiplin dan terorganisir.\n\nCatat jadwal obatmu, atur waktu pengingat, dan jadikan MediRemind sebagai teman dalam menjaga kesehatan setiap hari.\n\nIngat, minum obat sesuai petunjuk tenaga kesehatan merupakan salah satu langkah penting dalam menjaga kesehatan tubuh."
+                    android:textColor="#454545"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textDeskripsi"/>
+
+            </LinearLayout>
+
+
+            <!--            &lt;!&ndash; Tambahkan konten panjang supaya bisa di-scroll &ndash;&gt;-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "-->
+            <!--                android:textSize="16sp"-->
+            <!--                android:layout_marginTop="24dp" />-->
 
             <Button
                 android:id="@+id/btnKembaliDetail"
@@ -164,7 +192,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.875"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnKembali"/>
+                app:layout_constraintTop_toBottomOf="@+id/btnKembali" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

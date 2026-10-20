@@ -31,8 +31,8 @@ class DetailActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Halaman Detail"
-            subtitle = "Ini adalah subtitle"
+            title = "Detail Obat"
+            subtitle = "Medi Remind"
             setDisplayHomeAsUpEnabled(true) // display menampilkan panah aja belum bisa di klik
             setDisplayShowHomeEnabled(true)
         }
