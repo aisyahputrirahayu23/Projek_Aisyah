@@ -26,6 +26,6 @@ class ProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Halaman Jadwal"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Halaman Profil"
     }
 }

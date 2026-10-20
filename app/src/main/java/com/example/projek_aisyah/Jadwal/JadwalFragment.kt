@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projek_aisyah.R
-import com.example.projek_aisyah.databinding.FragmentBerandaBinding
 import com.example.projek_aisyah.databinding.FragmentJadwalBinding
 
 class JadwalFragment : Fragment() {
@@ -18,18 +15,28 @@ class JadwalFragment : Fragment() {
     private var _binding: FragmentJadwalBinding? = null
     private val binding get() = _binding!!
 
-    private val dataList = listOf(
-        "Kotlin", "Java", "Python", "C++", "JavaScript",
-        "Dart", "Swift", "Go", "Ruby", "R",
-        "PHP", "C#", "TypeScript", "Shell", "SQL",
-        "Perl", "Rust", "Scala", "Haskell", "Lua",
-        "Erlang", "Prolog", "Assembly", "Objective-C", "VBA"
-    )
-
-    private val dataListWithDesc = listOf(
-        mapOf("title" to "Kotlin", "desc" to "Bahasa untuk Android modern"),
-        mapOf("title" to "Java", "desc" to "Bahasa OOP yang populer"),
-        mapOf("title" to "Python", "desc" to "Bahasa yang mudah dipahami")
+    private val jadwalList = listOf(
+        JadwalModel(
+            namaObat = "Metformin 500 mg",
+            dosis = "500 mg",
+            jadwal = "07:00 dan 19:00",
+            stok = "18 tablet",
+            gambarObat = R.drawable.obat
+        ),
+        JadwalModel(
+            namaObat = "Amlodipine 5 mg",
+            dosis = "5 mg",
+            jadwal = "13:00",
+            stok = "4 tablet",
+            gambarObat = R.drawable.obat2
+        ),
+        JadwalModel(
+            namaObat = "Vitamin C 500 mg",
+            dosis = "500 mg",
+            jadwal = "09:00",
+            stok = "14 tablet",
+            gambarObat = R.drawable.obat3
+        )
     )
 
     override fun onCreateView(
@@ -45,37 +52,7 @@ class JadwalFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Halaman Jadwal"
 
-        // Adapter: penghubung dataList dengan layout simple_list_item_1
-//        val adapter = ArrayAdapter(
-//            requireContext(),
-//            android.R.layout.simple_list_item_1,
-//            dataList
-//        )
-//// Hubungkan listViewItems dengan adapter
-//        binding.listViewItems.adapter = adapter
-//// Aksi saat item diklik
-//        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
-//            val selectedItem = dataList[position]
-//            Toast.makeText(
-//                requireContext(), "Kamu memilih: $selectedItem",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-
-//        val adapter = SimpleAdapter(
-//            requireContext(),
-//            dataListWithDesc,
-//            android.R.layout.simple_list_item_2,
-//            arrayOf("title", "desc"), // key yang diambil dari data
-//            intArrayOf(android.R.id.text1, android.R.id.text2) // tempat tampilnya
-//        )
-//        binding.listViewItems.adapter = adapter
-//        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
-//            val selectedItem = dataListWithDesc[position]
-//            val title = selectedItem["title"]
-//            val desc = selectedItem["desc"]
-//            Toast.makeText(requireContext(), "Kamu memilih: $title ($desc)",
-//                Toast.LENGTH_SHORT).show()
-//        }
+        val adapter = JadwalAdapter(requireContext(), jadwalList)
+        binding.listViewObat.adapter = adapter
     }
 }
