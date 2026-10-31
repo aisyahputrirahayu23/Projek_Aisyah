@@ -6,4 +6,27 @@
     </style>
 
     <style name="Theme.Projek_Aisyah" parent="Base.Theme.Projek_Aisyah" />
+
+    <!-- Style chip untuk halaman Tambah Obat -->
+    <style name="ChipMediRemind" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/mr_ink</item>
+        <item name="android:textSize">14sp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipBackgroundColor">@color/chip_bg_selector</item>
+        <item name="chipStrokeColor">@color/chip_stroke_selector</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipMinHeight">44dp</item>
+        <item name="chipCornerRadius">22dp</item>
+    </style>
+
+    <!-- Style kolom input untuk halaman Tambah Obat -->
+    <style name="InputMediRemind" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/mr_teal</item>
+        <item name="hintEnabled">false</item>
+    </style>
 </resources>
