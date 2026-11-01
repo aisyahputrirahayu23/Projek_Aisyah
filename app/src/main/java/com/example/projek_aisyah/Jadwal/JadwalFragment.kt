@@ -21,7 +21,6 @@ class JadwalFragment : Fragment() {
     private var _binding: FragmentJadwalBinding? = null
     private val binding get() = _binding!!
 
-    // Data contoh. Nanti ganti dengan data dari database.
     private val jadwalList = listOf(
         JadwalModel(
             namaObat = "Metformin 500 mg",
