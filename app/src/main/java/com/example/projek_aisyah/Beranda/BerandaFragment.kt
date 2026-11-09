@@ -6,10 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.projek_aisyah.DetailActivity
 import com.example.projek_aisyah.R
+import com.example.projek_aisyah.TambahObatActivity
 import com.example.projek_aisyah.databinding.FragmentBerandaBinding
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
@@ -21,7 +23,7 @@ class BerandaFragment : Fragment() {
     private var _binding: FragmentBerandaBinding? = null
     private val binding get() = _binding!!
 
-    // Data contoh. Nanti ganti dengan data dari database.
+    // Data contoh. Nanti ganti data dari database.
     private var dosisDiminum = 2
     private val totalDosis = 4
     private var amlodipineSudahDiminum = false
@@ -81,6 +83,22 @@ class BerandaFragment : Fragment() {
         binding.btnLihatDetail.setOnClickListener {
             val intent = Intent(requireContext(), DetailActivity::class.java)
             startActivity(intent)
+        }
+
+        // Grid Layout
+        val bentukMap = mapOf(
+            binding.cardTablet to "Tablet",
+            binding.cardKapsul to "Kapsul",
+            binding.cardSirup to "Sirup",
+            binding.cardSalep to "Salep",
+            binding.cardTetes to "Tetes",
+            binding.cardSuntik to "Suntik"
+        )
+        bentukMap.forEach { (card, nama) ->
+            card.setOnClickListener {
+                Toast.makeText(requireContext(), "Bentuk dipilih: $nama", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(requireContext(), TambahObatActivity::class.java))
+            }
         }
     }
 

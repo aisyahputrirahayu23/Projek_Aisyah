@@ -24,4 +24,6 @@
     <color name="mr_red">#C0392B</color>
     <color name="mr_red_soft">#FDE3E0</color>
     <color name="mr_red_text">#A12E22</color>
+    <color name="dot_unselected">#8FD0D3</color>
+    <color name="dot_selected">#FFFFFF</color>
 </resources>

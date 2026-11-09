@@ -47,4 +47,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
+    implementation("androidx.gridlayout:gridlayout:1.0.0")   // Grid Layout
+    implementation("androidx.viewpager2:viewpager2:1.1.0")   // Tutorial Screen (ViewPager2)
+    implementation("com.tbuonomo:dotsindicator:5.1.0")       // Penanda halaman (DotsIndicator)
 }

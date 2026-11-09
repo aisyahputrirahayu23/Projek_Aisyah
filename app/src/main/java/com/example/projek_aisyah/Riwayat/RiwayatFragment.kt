@@ -12,6 +12,7 @@ import com.example.projek_aisyah.R
 import com.example.projek_aisyah.databinding.FragmentRiwayatBinding
 import com.example.projek_aisyah.databinding.HeaderRiwayatBinding
 import com.example.projek_aisyah.databinding.ItemBarRiwayatBinding
+import com.google.android.material.chip.Chip
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -22,8 +23,6 @@ class RiwayatFragment : Fragment() {
     private var _binding: FragmentRiwayatBinding? = null
     private val binding get() = _binding!!
 
-    // Data contoh. Nanti ganti dengan data dari database.
-    // Jumlah dosis yang diminum per hari, urut dari 6 hari lalu sampai hari ini.
     private val dosisPerHari = listOf(4, 4, 3, 4, 3, 4, 2)
     private val targetPerHari = 4
 
@@ -63,6 +62,24 @@ class RiwayatFragment : Fragment() {
                 "Kamu memilih: ${item.namaObat} (${item.jam} - ${item.status})",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        // CHIP GROUP: filter riwayat berdasarkan status
+        header.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+
+                // Logika filter: "Semua" tampilkan semua, selain itu cocokkan dengan status
+                val hasil = if (selectedChipId == R.id.chipSemua) {
+                    riwayatKemarin
+                } else {
+                    riwayatKemarin.filter { it.status == chip.text.toString() }
+                }
+                binding.listViewRiwayat.adapter = RiwayatAdapter(requireContext(), hasil)
+
+                Toast.makeText(requireContext(), "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
