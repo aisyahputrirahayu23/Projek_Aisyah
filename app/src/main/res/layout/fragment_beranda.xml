@@ -488,6 +488,21 @@
 
             </androidx.gridlayout.widget.GridLayout>
 
+<!--            tablayout-->
+            <Button
+                android:id="@+id/btnObatSaya"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="Lihat Obat Saya"
+                android:textAllCaps="false"
+                android:textColor="@color/mr_teal_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                app:strokeColor="@color/mr_teal" />
+
             <!-- Judul section + Lihat detail -->
             <LinearLayout
                 android:layout_width="match_parent"

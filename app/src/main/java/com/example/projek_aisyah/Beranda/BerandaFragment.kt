@@ -13,6 +13,7 @@ import com.example.projek_aisyah.DetailActivity
 import com.example.projek_aisyah.R
 import com.example.projek_aisyah.TambahObatActivity
 import com.example.projek_aisyah.databinding.FragmentBerandaBinding
+import com.example.projek_aisyah.obat.ObatSayaActivity
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -82,6 +83,11 @@ class BerandaFragment : Fragment() {
         // LIHAT DETAIL
         binding.btnLihatDetail.setOnClickListener {
             val intent = Intent(requireContext(), DetailActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnObatSaya.setOnClickListener {
+            val intent = Intent(requireContext(), ObatSayaActivity::class.java)
             startActivity(intent)
         }
 

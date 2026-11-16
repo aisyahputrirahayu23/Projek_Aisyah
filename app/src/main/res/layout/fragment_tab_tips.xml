@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".obat.TabTipsFragment"
+    android:background="@color/mr_bg"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tips minum obat"
+            android:textColor="@color/mr_ink"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6dp"
+                android:padding="16dp"
+                android:text="💧 Minum obat dengan air putih, kecuali ada anjuran lain.&#10;&#10;⏰ Minum pada jam yang sama setiap hari agar efeknya stabil.&#10;&#10;🍽️ Perhatikan aturan: sebelum atau sesudah makan.&#10;&#10;🚫 Jangan menghentikan antibiotik sebelum habis.&#10;&#10;🌡️ Simpan obat di tempat sejuk, kering, dan jauh dari sinar matahari."
+                android:textColor="@color/mr_ink"
+                android:textSize="15sp" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>
