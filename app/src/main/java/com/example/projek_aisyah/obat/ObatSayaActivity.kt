@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.projek_aisyah.R
+import com.example.projek_aisyah.data.AppDatabase
 import com.example.projek_aisyah.databinding.ActivityObatSayaBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.launch
 
 class ObatSayaActivity : AppCompatActivity() {
 
@@ -50,8 +53,6 @@ class ObatSayaActivity : AppCompatActivity() {
                     tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_box)
                     // Badge angka: jumlah obat yang stoknya menipis
                     val badge = tab.getOrCreateBadge()
-                    badge.isVisible = true
-                    badge.number = 4
                 }
 
                 1 -> {
@@ -65,6 +66,16 @@ class ObatSayaActivity : AppCompatActivity() {
                 }
             }
         }.attach()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch {
+            val jumlah = AppDatabase.getInstance(this@ObatSayaActivity).obatDao().countMenipis()
+            val badge = binding.tabLayout.getTabAt(0)?.getOrCreateBadge()
+            badge?.isVisible = jumlah > 0
+            badge?.number = jumlah
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

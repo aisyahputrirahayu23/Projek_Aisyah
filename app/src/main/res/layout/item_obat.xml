@@ -21,6 +21,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/btnHapus"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="Hapus obat"
+        android:padding="6dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvNamaObat"
         android:layout_width="0dp"

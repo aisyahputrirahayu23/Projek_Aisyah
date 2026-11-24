@@ -23,9 +23,10 @@
         android:layout_height="wrap_content"
         app:backgroundTint="#FFFFFF"
         app:itemIconTint="#2E3537"
-        app:itemTextColor="#2E3537"
         app:itemRippleColor="#0E7C86"
+        app:itemTextColor="#2E3537"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

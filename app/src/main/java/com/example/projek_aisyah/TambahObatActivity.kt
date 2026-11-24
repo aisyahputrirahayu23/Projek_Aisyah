@@ -7,12 +7,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.projek_aisyah.data.AppDatabase
+import com.example.projek_aisyah.data.entity.ObatEntity
 import com.example.projek_aisyah.databinding.ActivityTambahObatBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 class TambahObatActivity : AppCompatActivity() {
@@ -130,10 +134,26 @@ class TambahObatActivity : AppCompatActivity() {
             )
             .setPositiveButton("Ya") { dialog, _ ->
                 dialog.dismiss()
-                // TODO: simpan ke database
-                Log.e("Info Dialog", "Obat disimpan: $nama $dosis")
-                Toast.makeText(this, "Obat berhasil disimpan", Toast.LENGTH_SHORT).show()
-                finish()
+                lifecycleScope.launch {
+                    try {
+                        AppDatabase.getInstance(this@TambahObatActivity).obatDao().insert(
+                            ObatEntity(
+                                nama = nama,
+                                dosis = dosis,
+                                bentuk = bentuk,
+                                aturan = aturan,
+                                frekuensi = frekuensi,
+                                jam = jamText,
+                                stok = stok
+                            )
+                        )
+                        Log.e("Info Dialog", "Obat disimpan: $nama $dosis")
+                        Toast.makeText(this@TambahObatActivity, "Obat berhasil disimpan", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } catch (e: Exception) {
+                        Toast.makeText(this@TambahObatActivity, "Gagal menyimpan obat", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
             .setNegativeButton("Batal") { dialog, _ ->
                 dialog.dismiss()
